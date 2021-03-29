@@ -1,6 +1,7 @@
 package com.springboot.isotool.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -42,8 +43,9 @@ public class ISOController {
 	@PostMapping("/getResponseMsg")
 	public ResponseEntity<?> fetchResponse(@RequestBody InputModel inputModel) {
 		OutputModel outputmodel = new OutputModel();
+		List<String> output = null;
 		try {
-			String output = null;
+			//String output = null;
 			System.out.println("INput from UI : " + inputModel);
 			output = service.processDataElements(inputModel);
 			if (output != null) {

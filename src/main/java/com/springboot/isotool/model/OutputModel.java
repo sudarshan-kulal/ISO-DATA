@@ -1,16 +1,18 @@
 package com.springboot.isotool.model;
 
+import java.util.List;
+
 public class OutputModel {
 
-	private String response;
+	private List<String> response;
 
 	private String status;
 
-	public String getResponse() {
+	public List<String> getResponse() {
 		return response;
 	}
 
-	public void setResponse(String response) {
+	public void setResponse(List<String> response) {
 		this.response = response;
 	}
 
