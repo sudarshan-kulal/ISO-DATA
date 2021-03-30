@@ -1,34 +1,31 @@
 package com.springboot.isotool.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class InputModel {
 	
-	private String response;
+	private String responseCode;
+	private String dE;
 	
-	private String dataElement;
-
-	public String getResponse() {
-		return response;
+	public String getResponseCode() {
+		return responseCode;
 	}
-
-	public void setResponse(String response) {
-		this.response = response;
+	public void setResponseCode(String responseCode) {
+		this.responseCode = responseCode;
 	}
-
-	public String getDataElement() {
-		return dataElement;
+	public String getdE() {
+		return dE;
 	}
-
-	public void setDataElement(String dataElement) {
-		this.dataElement = dataElement;
+	public void setdE(String dE) {
+		this.dE = dE;
 	}
-
 	@Override
 	public String toString() {
-		return "InputModel [response=" + response + ", dataElement=" + dataElement + "]";
+		return "InputModel [responseCode=" + responseCode + ", dE=" + dE + "]";
 	}
-
 	
-
+	
+	
+	
+	
+	
 }

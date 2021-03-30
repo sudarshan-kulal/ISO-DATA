@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,6 +41,7 @@ public class ISOController {
 		return "Hello World!";
 	}
 
+	//@PostMapping(value ="/getResponseMsg",  headers = "content-type=application/json", consumes = MediaType.APPLICATION_JSON_VALUE)
 	@PostMapping("/getResponseMsg")
 	public ResponseEntity<?> fetchResponse(@RequestBody InputModel inputModel) {
 		OutputModel outputmodel = new OutputModel();
