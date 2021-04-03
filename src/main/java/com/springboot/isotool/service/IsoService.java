@@ -1,7 +1,9 @@
 package com.springboot.isotool.service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
@@ -102,6 +104,10 @@ public class IsoService {
 			output.add(env.getProperty(inputMode.getResponseCode()));
 			break;
 
+		case "DE-55":
+			output = fetchEMVData(inputMode.getResponseCode());
+			break;
+
 		default:
 			output = null;
 			break;
@@ -110,14 +116,66 @@ public class IsoService {
 		return output;
 	}
 
+	// 9F02060000000000009F0306111111111111
+	private List<String> fetchEMVData(String responseCode) {
+
+		List<String> output = new ArrayList<String>();
+		List<String> op2 = new ArrayList<String>();
+		try {
+			String emvdata = env.getProperty("EMVTAG");
+			System.out.println(responseCode);
+			String[] input = emvdata.split(",");
+
+			for (String tag : input) {
+				output.add(tag);
+			}
+			while (!responseCode.isEmpty()) {
+				// System.out.println("1 "+responseCode);
+				int dataLengthToBeRemoved = 0;
+				String temptag = "";
+				// System.out.println(output.contains(responseCode.substring(0, 2)));
+				// System.out.println(output.contains(responseCode.substring(0, 4)));
+				if (output.contains(responseCode.substring(0, 2))) {
+					temptag = responseCode.substring(0, 2);
+				}
+				if (output.contains(responseCode.substring(0, 4))) {
+					temptag = responseCode.substring(0, 4);
+					// System.out.println("2 "+temptag);
+				}
+				// System.out.println("3 "+temptag);
+				String testStr = responseCode.substring(temptag.length());
+				// System.out.println("4 "+testStr);
+				dataLengthToBeRemoved += temptag.length();
+				String tagLength = testStr.substring(0, 2);
+				// System.out.println(testStr + " " + dataLengthToBeRemoved + " " + tagLength);
+				if (tagLength.equalsIgnoreCase(env.getProperty(temptag))) {
+					dataLengthToBeRemoved += 2;
+					int tagValueLength = Integer.parseInt(tagLength, 16) * 2;
+					// System.out.println(tagValueLength);
+					dataLengthToBeRemoved += tagValueLength;
+					String tagValue = testStr.substring(2, tagValueLength + 2);
+					op2.add(temptag + ":" + tagValue);
+					int totalTagDataLength = dataLengthToBeRemoved;
+					responseCode = responseCode.substring(totalTagDataLength);
+				}
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return op2;
+	}
+
 	private List<String> fetchProcessingCode(InputModel response) {
 		List<String> output = new ArrayList<String>();
 		String input = response.getResponseCode();
 		System.out.println(input);
+		System.out.println(response.getdE().substring(3, 5));
 		int begin = 0;
 
 		for (int i = 1; i <= 3; i++) {
-			String op = env.getProperty(response.getdE() + "-" + i + "-" + input.substring(begin, begin + 2));
+			String op = env
+					.getProperty(response.getdE().substring(3, 5) + "-" + i + "-" + input.substring(begin, begin + 2));
 			output.add(op);
 			begin += 2;
 		}
