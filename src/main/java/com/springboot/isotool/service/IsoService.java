@@ -93,7 +93,35 @@ public class IsoService {
 			break;
 
 		case "DE-22":
-			output.add(env.getProperty("Element22"));
+			output = fetchPointServiceCondition(inputMode);
+			break;
+			
+		case "DE-23":
+			output.add(env.getProperty("Element23"));
+			break;
+			
+		case "DE-25":
+			output.add(env.getProperty(inputMode.getdE().substring(3,5)+"-"+inputMode.getResponseCode()));
+			break;
+			
+		case "DE-28":
+			output.add(env.getProperty("Element28"));
+			break;
+			
+		case "DE-32":
+			output.add(env.getProperty("Element32"));
+			break;
+			
+		case "DE-33":
+			output.add(env.getProperty("Element33"));
+			break;
+			
+		case "DE-35":
+			output.add(env.getProperty("Element35"));
+			break;
+			
+		case "DE-37":
+			output.add(env.getProperty("Element37"));
 			break;
 
 		case "DE-38":
@@ -103,9 +131,101 @@ public class IsoService {
 		case "DE-39":
 			output.add(env.getProperty(inputMode.getResponseCode()));
 			break;
+			
+		case "DE-40":
+			output.add(env.getProperty("Element40"));
+			break;
+			
+		case "DE-41":
+			output.add(env.getProperty("Element41"));
+			break;
+			
+		case "DE-42":
+			output.add(env.getProperty("Element42"));
+			break;
+			
+		case "DE-43":
+			output.add(env.getProperty("Element43"));
+			break;
+			
+		case "DE-44":
+			output.add(env.getProperty("Element44"));
+			break;
+			
+		case "DE-45":
+			output.add(env.getProperty("Element45"));
+			break;
+			
+		case "DE-49":
+			output.add(env.getProperty("Element49"));
+			break;
+			
+		case "DE-50":
+			output.add(env.getProperty("Element50"));
+			break;
+			
+		case "DE-51":
+			output.add(env.getProperty("Element51"));
+			break;
+			
+		case "DE-52":
+			output.add(env.getProperty("Element52"));
+			break;
 
 		case "DE-55":
 			output = fetchEMVData(inputMode.getResponseCode());
+			break;
+			
+		case "DE-60":
+			output.add(env.getProperty("Element60"));
+			break;
+			
+		case "DE-62":
+			output.add(env.getProperty("Element62"));
+			break;
+			
+		case "DE-63":
+			output.add(env.getProperty("Element63"));
+			break;
+			
+		case "DE-70":
+			output.add(env.getProperty("Element70"));
+			break;
+			
+		case "DE-90":
+			output.add(env.getProperty("Element90"));
+			break;
+			
+		case "DE-91":
+			output.add(env.getProperty("Element91"));
+			break;
+			
+		case "DE-95":
+			output.add(env.getProperty("Element95"));
+			break;
+			
+		case "DE-101":
+			output.add(env.getProperty("Element101"));
+			break;
+			
+		case "DE-102":
+			output.add(env.getProperty("Element102"));
+			break;
+			
+		case "DE-103":
+			output.add(env.getProperty("Element103"));
+			break;
+			
+		case "DE-125":
+			output.add(env.getProperty("Element125"));
+			break;
+			
+		case "DE-126":
+			output.add(env.getProperty("Element126"));
+			break;
+			
+		case "DE-127":
+			output.add(env.getProperty("Element127"));
 			break;
 
 		default:
@@ -113,6 +233,22 @@ public class IsoService {
 			break;
 		}
 
+		return output;
+	}
+
+	private List<String> fetchPointServiceCondition(InputModel responseCode) {
+		List<String> output = new ArrayList<String>();
+		String input = responseCode.getResponseCode();
+		System.out.println(input);
+		for(int i=1;i<=2;i++) {
+			String op = null;
+			if(i == 1)
+		    op = env.getProperty(responseCode.getdE().substring(3,5)+"-"+input.substring(0,2));
+			if(i == 2)
+			op = env.getProperty(responseCode.getdE().substring(3,5)+"-"+input.substring(2));
+			System.out.println("hello "+op);
+			output.add(op);
+		}
 		return output;
 	}
 
