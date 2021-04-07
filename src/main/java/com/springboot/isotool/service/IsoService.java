@@ -266,7 +266,7 @@ public class IsoService {
 				output.add(tag);
 			}
 			while (!responseCode.isEmpty()) {
-				// System.out.println("1 "+responseCode);
+				 System.out.println("1 "+responseCode);
 				int dataLengthToBeRemoved = 0;
 				String temptag = "";
 				// System.out.println(output.contains(responseCode.substring(0, 2)));
@@ -276,21 +276,21 @@ public class IsoService {
 				}
 				if (output.contains(responseCode.substring(0, 4))) {
 					temptag = responseCode.substring(0, 4);
-					// System.out.println("2 "+temptag);
+					System.out.println("2 "+temptag);
 				}
-				// System.out.println("3 "+temptag);
+				 System.out.println("3 "+temptag);
 				String testStr = responseCode.substring(temptag.length());
-				// System.out.println("4 "+testStr);
+				 System.out.println("4 "+testStr);
 				dataLengthToBeRemoved += temptag.length();
 				String tagLength = testStr.substring(0, 2);
-				// System.out.println(testStr + " " + dataLengthToBeRemoved + " " + tagLength);
-				if (tagLength.equalsIgnoreCase(env.getProperty(temptag))) {
+				System.out.println(testStr + " " + dataLengthToBeRemoved + " " + tagLength);
+				if (tagLength.equalsIgnoreCase(testStr.substring(0, 2))) {
 					dataLengthToBeRemoved += 2;
 					int tagValueLength = Integer.parseInt(tagLength, 16) * 2;
 					// System.out.println(tagValueLength);
 					dataLengthToBeRemoved += tagValueLength;
 					String tagValue = testStr.substring(2, tagValueLength + 2);
-					op2.add(temptag + ":" + tagValue);
+					op2.add(temptag + ":" + tagValue+":"+env.getProperty(temptag));
 					int totalTagDataLength = dataLengthToBeRemoved;
 					responseCode = responseCode.substring(totalTagDataLength);
 				}
