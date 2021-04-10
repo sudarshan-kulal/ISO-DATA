@@ -30,66 +30,82 @@ public class IsoService {
 		switch (element) {
 
 		case "DE-02":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element02"));
 			break;
 
 		case "DE-03":
+			output.add(inputMode.getResponseCode());
 			output = fetchProcessingCode(inputMode);
 			break;
 
 		case "DE-04":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element04"));
 			break;
 
 		case "DE-05":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element05"));
 			break;
 
 		case "DE-06":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element06"));
 			break;
 
 		case "DE-07":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element07"));
 			break;
 
 		case "DE-09":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element09"));
 			break;
 
 		case "DE-10":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element10"));
 			break;
 
 		case "DE-11":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element11"));
 			break;
 
 		case "DE-12":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element12"));
 			break;
 
 		case "DE-13":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element13"));
 			break;
 
 		case "DE-14":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element14"));
 			break;
 
 		case "DE-15":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element15"));
 			break;
 
 		case "DE-16":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element16"));
 			break;
 
 		case "DE-18":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element18"));
 			break;
 
 		case "DE-19":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element19"));
 			break;
 
@@ -98,6 +114,7 @@ public class IsoService {
 			break;
 			
 		case "DE-23":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element23"));
 			break;
 			
@@ -106,26 +123,32 @@ public class IsoService {
 			break;
 			
 		case "DE-28":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element28"));
 			break;
 			
 		case "DE-32":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element32"));
 			break;
 			
 		case "DE-33":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element33"));
 			break;
 			
 		case "DE-35":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element35"));
 			break;
 			
 		case "DE-37":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element37"));
 			break;
 
 		case "DE-38":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element38"));
 			break;
 
@@ -134,42 +157,52 @@ public class IsoService {
 			break;
 			
 		case "DE-40":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element40"));
 			break;
 			
 		case "DE-41":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element41"));
 			break;
 			
 		case "DE-42":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element42"));
 			break;
 			
 		case "DE-43":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element43"));
 			break;
 			
 		case "DE-44":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element44"));
 			break;
 			
 		case "DE-45":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element45"));
 			break;
 			
 		case "DE-49":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element49"));
 			break;
 			
 		case "DE-50":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element50"));
 			break;
 			
 		case "DE-51":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element51"));
 			break;
 			
 		case "DE-52":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element52"));
 			break;
 
@@ -178,54 +211,67 @@ public class IsoService {
 			break;
 			
 		case "DE-60":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element60"));
 			break;
 			
 		case "DE-62":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element62"));
 			break;
 			
 		case "DE-63":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element63"));
 			break;
 			
 		case "DE-70":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element70"));
 			break;
 			
 		case "DE-90":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element90"));
 			break;
 			
 		case "DE-91":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element91"));
 			break;
 			
 		case "DE-95":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element95"));
 			break;
 			
 		case "DE-101":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element101"));
 			break;
 			
 		case "DE-102":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element102"));
 			break;
 			
 		case "DE-103":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element103"));
 			break;
 			
 		case "DE-125":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element125"));
 			break;
 			
 		case "DE-126":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element126"));
 			break;
 			
 		case "DE-127":
+			output.add(inputMode.getResponseCode());
 			output.add(env.getProperty("Element127"));
 			break;
 
