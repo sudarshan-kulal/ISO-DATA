@@ -50,7 +50,7 @@ public class ISOController {
 			//String output = null;
 			System.out.println("INput from UI : " + inputModel);
 			output = service.processDataElements(inputModel);
-			if (output != null) {
+			if (output != null && !output.isEmpty()) {
 				System.out.println("resp" + output);
 				outputmodel.setResponse(output);
 				outputmodel.setStatus("Success");
