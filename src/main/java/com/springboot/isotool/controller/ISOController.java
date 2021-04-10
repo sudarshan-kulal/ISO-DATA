@@ -3,6 +3,7 @@ package com.springboot.isotool.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
@@ -50,7 +51,8 @@ public class ISOController {
 			//String output = null;
 			System.out.println("INput from UI : " + inputModel);
 			output = service.processDataElements(inputModel);
-			if (output != null && !output.isEmpty()) {
+			output.removeIf(Objects::isNull);
+			if (!output.contains("null") && !output.isEmpty()) {
 				System.out.println("resp" + output);
 				outputmodel.setResponse(output);
 				outputmodel.setStatus("Success");
