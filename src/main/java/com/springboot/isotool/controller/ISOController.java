@@ -58,6 +58,7 @@ public class ISOController {
 				outputmodel.setStatus("Success");
 				return new ResponseEntity<>(outputmodel, HttpStatus.OK);
 			} else {
+				outputmodel.setResponse(output);
 				outputmodel.setStatus("Fail");
 				return new ResponseEntity<>(ISOConstants.RECORD_NOT_FOUND, HttpStatus.INTERNAL_SERVER_ERROR);
 			}
