@@ -26,6 +26,7 @@ public class IsoService {
 		String element = inputMode.getdE();
 		System.out.println("element : " + element);
 
+		if(inputMode.getResponseCode()!=null) {
 		switch (element) {
 
 		case "DE-02":
@@ -233,6 +234,8 @@ public class IsoService {
 			break;
 		}
 
+		
+	}
 		return output;
 	}
 
