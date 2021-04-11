@@ -29,37 +29,37 @@ public class IsoService {
 		if (inputMode.getResponseCode() != null) {
 			switch (element) {
 
-			case "DE-02":
+			case "DE-2":
 
 				output.add(env.getProperty("Element02"));
 				break;
 
-			case "DE-03":
+			case "DE-3":
 
 				output = fetchProcessingCode(inputMode);
 				break;
 
-			case "DE-04":
+			case "DE-4":
 
 				output.add(env.getProperty("Element04"));
 				break;
 
-			case "DE-05":
+			case "DE-5":
 
 				output.add(env.getProperty("Element05"));
 				break;
 
-			case "DE-06":
+			case "DE-6":
 
 				output.add(env.getProperty("Element06"));
 				break;
 
-			case "DE-07":
+			case "DE-7":
 
 				output.add(env.getProperty("Element07"));
 				break;
 
-			case "DE-09":
+			case "DE-9":
 
 				output.add(env.getProperty("Element09"));
 				break;
