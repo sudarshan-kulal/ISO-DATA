@@ -27,7 +27,7 @@ import com.springboot.isotool.util.ISOConstants;
 
 @RestController
 @PropertySource("classpath:response.properties")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:8081")
 @RequestMapping(value = "/api")
 public class ISOController {
 
@@ -51,7 +51,7 @@ public class ISOController {
 			//String output = null;
 			System.out.println("INput from UI : " + inputModel);
 			output = service.processDataElements(inputModel);
-			output.removeIf(Objects::isNull);
+			//output.removeIf(Objects::isNull);
 			if (!output.contains("null") && !output.isEmpty()) {
 				System.out.println("resp" + output);
 				outputmodel.setResponse(output);

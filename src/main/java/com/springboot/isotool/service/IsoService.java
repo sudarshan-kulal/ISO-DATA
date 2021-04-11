@@ -26,262 +26,261 @@ public class IsoService {
 		String element = inputMode.getdE();
 		System.out.println("element : " + element);
 
-		if(inputMode.getResponseCode()!=null) {
-		switch (element) {
+		if (inputMode.getResponseCode() != null) {
+			switch (element) {
 
-		case "DE-02":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element02"));
-			break;
+			case "DE-02":
 
-		case "DE-03":
-			output.add(inputMode.getResponseCode());
-			output = fetchProcessingCode(inputMode);
-			break;
+				output.add(env.getProperty("Element02"));
+				break;
 
-		case "DE-04":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element04"));
-			break;
+			case "DE-03":
 
-		case "DE-05":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element05"));
-			break;
+				output = fetchProcessingCode(inputMode);
+				break;
 
-		case "DE-06":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element06"));
-			break;
+			case "DE-04":
 
-		case "DE-07":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element07"));
-			break;
+				output.add(env.getProperty("Element04"));
+				break;
 
-		case "DE-09":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element09"));
-			break;
+			case "DE-05":
 
-		case "DE-10":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element10"));
-			break;
+				output.add(env.getProperty("Element05"));
+				break;
 
-		case "DE-11":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element11"));
-			break;
+			case "DE-06":
 
-		case "DE-12":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element12"));
-			break;
+				output.add(env.getProperty("Element06"));
+				break;
 
-		case "DE-13":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element13"));
-			break;
+			case "DE-07":
 
-		case "DE-14":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element14"));
-			break;
+				output.add(env.getProperty("Element07"));
+				break;
 
-		case "DE-15":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element15"));
-			break;
+			case "DE-09":
 
-		case "DE-16":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element16"));
-			break;
+				output.add(env.getProperty("Element09"));
+				break;
 
-		case "DE-18":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element18"));
-			break;
+			case "DE-10":
 
-		case "DE-19":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element19"));
-			break;
+				output.add(env.getProperty("Element10"));
+				break;
 
-		case "DE-22":
-			output = fetchPointServiceCondition(inputMode);
-			break;
-			
-		case "DE-23":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element23"));
-			break;
-			
-		case "DE-25":
-			output.add(env.getProperty(inputMode.getdE().substring(3,5)+"-"+inputMode.getResponseCode()));
-			break;
-			
-		case "DE-28":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element28"));
-			break;
-			
-		case "DE-32":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element32"));
-			break;
-			
-		case "DE-33":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element33"));
-			break;
-			
-		case "DE-35":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element35"));
-			break;
-			
-		case "DE-37":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element37"));
-			break;
+			case "DE-11":
 
-		case "DE-38":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element38"));
-			break;
+				output.add(env.getProperty("Element11"));
+				break;
 
-		case "DE-39":
-			output.add(env.getProperty(inputMode.getResponseCode()));
-			break;
-			
-		case "DE-40":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element40"));
-			break;
-			
-		case "DE-41":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element41"));
-			break;
-			
-		case "DE-42":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element42"));
-			break;
-			
-		case "DE-43":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element43"));
-			break;
-			
-		case "DE-44":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element44"));
-			break;
-			
-		case "DE-45":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element45"));
-			break;
-			
-		case "DE-49":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element49"));
-			break;
-			
-		case "DE-50":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element50"));
-			break;
-			
-		case "DE-51":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element51"));
-			break;
-			
-		case "DE-52":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element52"));
-			break;
+			case "DE-12":
 
-		case "DE-55":
-			output = fetchEMVData(inputMode.getResponseCode());
-			break;
-			
-		case "DE-60":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element60"));
-			break;
-			
-		case "DE-62":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element62"));
-			break;
-			
-		case "DE-63":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element63"));
-			break;
-			
-		case "DE-70":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element70"));
-			break;
-			
-		case "DE-90":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element90"));
-			break;
-			
-		case "DE-91":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element91"));
-			break;
-			
-		case "DE-95":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element95"));
-			break;
-			
-		case "DE-101":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element101"));
-			break;
-			
-		case "DE-102":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element102"));
-			break;
-			
-		case "DE-103":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element103"));
-			break;
-			
-		case "DE-125":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element125"));
-			break;
-			
-		case "DE-126":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element126"));
-			break;
-			
-		case "DE-127":
-			output.add(inputMode.getResponseCode());
-			output.add(env.getProperty("Element127"));
-			break;
+				output.add(env.getProperty("Element12"));
+				break;
 
-		default:
-			output = null;
-			break;
+			case "DE-13":
+
+				output.add(env.getProperty("Element13"));
+				break;
+
+			case "DE-14":
+
+				output.add(env.getProperty("Element14"));
+				break;
+
+			case "DE-15":
+
+				output.add(env.getProperty("Element15"));
+				break;
+
+			case "DE-16":
+
+				output.add(env.getProperty("Element16"));
+				break;
+
+			case "DE-18":
+
+				output.add(env.getProperty("Element18"));
+				break;
+
+			case "DE-19":
+
+				output.add(env.getProperty("Element19"));
+				break;
+
+			case "DE-22":
+				output = fetchPointServiceCondition(inputMode);
+				break;
+
+			case "DE-23":
+
+				output.add(env.getProperty("Element23"));
+				break;
+
+			case "DE-25":
+				output.add(env.getProperty(inputMode.getdE().substring(3, 5) + "-" + inputMode.getResponseCode()));
+				break;
+
+			case "DE-28":
+
+				output.add(env.getProperty("Element28"));
+				break;
+
+			case "DE-32":
+
+				output.add(env.getProperty("Element32"));
+				break;
+
+			case "DE-33":
+
+				output.add(env.getProperty("Element33"));
+				break;
+
+			case "DE-35":
+
+				output.add(env.getProperty("Element35"));
+				break;
+
+			case "DE-37":
+
+				output.add(env.getProperty("Element37"));
+				break;
+
+			case "DE-38":
+
+				output.add(env.getProperty("Element38"));
+				break;
+
+			case "DE-39":
+				output.add(env.getProperty(inputMode.getResponseCode()));
+				break;
+
+			case "DE-40":
+
+				output.add(env.getProperty("Element40"));
+				break;
+
+			case "DE-41":
+
+				output.add(env.getProperty("Element41"));
+				break;
+
+			case "DE-42":
+
+				output.add(env.getProperty("Element42"));
+				break;
+
+			case "DE-43":
+
+				output.add(env.getProperty("Element43"));
+				break;
+
+			case "DE-44":
+
+				output.add(env.getProperty("Element44"));
+				break;
+
+			case "DE-45":
+
+				output.add(env.getProperty("Element45"));
+				break;
+
+			case "DE-49":
+
+				output.add(env.getProperty("Element49"));
+				break;
+
+			case "DE-50":
+
+				output.add(env.getProperty("Element50"));
+				break;
+
+			case "DE-51":
+
+				output.add(env.getProperty("Element51"));
+				break;
+
+			case "DE-52":
+
+				output.add(env.getProperty("Element52"));
+				break;
+
+			case "DE-55":
+				output = fetchEMVData(inputMode.getResponseCode());
+				break;
+
+			case "DE-60":
+
+				output.add(env.getProperty("Element60"));
+				break;
+
+			case "DE-62":
+
+				output.add(env.getProperty("Element62"));
+				break;
+
+			case "DE-63":
+
+				output.add(env.getProperty("Element63"));
+				break;
+
+			case "DE-70":
+
+				output.add(env.getProperty("Element70"));
+				break;
+
+			case "DE-90":
+
+				output.add(env.getProperty("Element90"));
+				break;
+
+			case "DE-91":
+
+				output.add(env.getProperty("Element91"));
+				break;
+
+			case "DE-95":
+
+				output.add(env.getProperty("Element95"));
+				break;
+
+			case "DE-101":
+
+				output.add(env.getProperty("Element101"));
+				break;
+
+			case "DE-102":
+
+				output.add(env.getProperty("Element102"));
+				break;
+
+			case "DE-103":
+
+				output.add(env.getProperty("Element103"));
+				break;
+
+			case "DE-125":
+
+				output.add(env.getProperty("Element125"));
+				break;
+
+			case "DE-126":
+
+				output.add(env.getProperty("Element126"));
+				break;
+
+			case "DE-127":
+
+				output.add(env.getProperty("Element127"));
+				break;
+
+			default:
+				output = null;
+				break;
+			}
+
 		}
-
-		
-	}
 		return output;
 	}
 
@@ -289,13 +288,13 @@ public class IsoService {
 		List<String> output = new ArrayList<String>();
 		String input = responseCode.getResponseCode();
 		System.out.println(input);
-		for(int i=1;i<=2;i++) {
+		for (int i = 1; i <= 2; i++) {
 			String op = null;
-			if(i == 1)
-		    op = env.getProperty(responseCode.getdE().substring(3,5)+"-"+input.substring(0,2));
-			if(i == 2)
-			op = env.getProperty(responseCode.getdE().substring(3,5)+"-"+input.substring(2));
-			System.out.println("hello "+op);
+			if (i == 1)
+				op = env.getProperty(responseCode.getdE().substring(3, 5) + "-" + input.substring(0, 2));
+			if (i == 2)
+				op = env.getProperty(responseCode.getdE().substring(3, 5) + "-" + input.substring(2));
+			System.out.println("hello " + op);
 			output.add(op);
 		}
 		return output;
@@ -315,7 +314,7 @@ public class IsoService {
 				output.add(tag);
 			}
 			while (!responseCode.isEmpty()) {
-				 System.out.println("1 "+responseCode);
+				System.out.println("1 " + responseCode);
 				int dataLengthToBeRemoved = 0;
 				String temptag = "";
 				// System.out.println(output.contains(responseCode.substring(0, 2)));
@@ -325,11 +324,11 @@ public class IsoService {
 				}
 				if (output.contains(responseCode.substring(0, 4))) {
 					temptag = responseCode.substring(0, 4);
-					System.out.println("2 "+temptag);
+					System.out.println("2 " + temptag);
 				}
-				 System.out.println("3 "+temptag);
+				System.out.println("3 " + temptag);
 				String testStr = responseCode.substring(temptag.length());
-				 System.out.println("4 "+testStr);
+				System.out.println("4 " + testStr);
 				dataLengthToBeRemoved += temptag.length();
 				String tagLength = testStr.substring(0, 2);
 				System.out.println(testStr + " " + dataLengthToBeRemoved + " " + tagLength);
@@ -339,7 +338,7 @@ public class IsoService {
 					// System.out.println(tagValueLength);
 					dataLengthToBeRemoved += tagValueLength;
 					String tagValue = testStr.substring(2, tagValueLength + 2);
-					op2.add(temptag + ":" + tagValue+":"+env.getProperty(temptag));
+					op2.add(temptag + ":" + tagValue + ":" + env.getProperty(temptag));
 					int totalTagDataLength = dataLengthToBeRemoved;
 					responseCode = responseCode.substring(totalTagDataLength);
 				}
