@@ -7,6 +7,7 @@ import java.util.Objects;
 
 import javax.annotation.PostConstruct;
 
+import org.jpos.iso.ISOMsg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -24,6 +25,7 @@ import com.springboot.isotool.model.InputModel;
 import com.springboot.isotool.model.OutputModel;
 import com.springboot.isotool.service.IsoService;
 import com.springboot.isotool.util.ISOConstants;
+import com.springboot.isotool.util.ISOMessageBreaker;
 
 @RestController
 @PropertySource("classpath:response.properties")
@@ -68,6 +70,25 @@ public class ISOController {
 			return new ResponseEntity<>(ISOConstants.ERROR, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
+	}
+	
+	
+	@PostMapping("/getMessage")
+	public ResponseEntity<?> getResponse(@RequestBody InputModel inputModel) {
+		String message = inputModel.getResponseCode();
+		ISOMessageBreaker isoMessageBreaker = new ISOMessageBreaker();
+		OutputModel outputmodel = new OutputModel();
+		List<String> output = null;
+		try {
+            ISOMsg isoMsg = isoMessageBreaker.parseISOMessage(message);
+            output = isoMessageBreaker.printISOMessage(isoMsg);
+            outputmodel.setResponse(output);
+            outputmodel.setStatus("Success");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+		
+		return new ResponseEntity<>(outputmodel, HttpStatus.OK);
 	}
 
 }
