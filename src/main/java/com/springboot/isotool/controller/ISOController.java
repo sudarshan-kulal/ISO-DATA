@@ -29,7 +29,7 @@ import com.springboot.isotool.util.ISOMessageBreaker;
 
 @RestController
 @PropertySource("classpath:response.properties")
-@CrossOrigin(origins = "http://localhost:8081")
+//@CrossOrigin(origins = "http://localhost:8081")
 @RequestMapping(value = "/api")
 public class ISOController {
 
@@ -76,6 +76,7 @@ public class ISOController {
 	@PostMapping("/getMessage")
 	public ResponseEntity<?> getResponse(@RequestBody InputModel inputModel) {
 		String message = inputModel.getResponseCode();
+		System.out.println("Test"+message);
 		ISOMessageBreaker isoMessageBreaker = new ISOMessageBreaker();
 		OutputModel outputmodel = new OutputModel();
 		List<String> output = null;
