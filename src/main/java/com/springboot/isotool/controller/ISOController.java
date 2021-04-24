@@ -29,7 +29,7 @@ import com.springboot.isotool.util.ISOMessageBreaker;
 
 @RestController
 @PropertySource("classpath:response.properties")
-//@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8081")
 @RequestMapping(value = "/api")
 public class ISOController {
 
