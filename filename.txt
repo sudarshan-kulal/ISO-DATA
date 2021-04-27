@@ -1,1 +1,1 @@
-Files in Java might be tricky, but it is fun enough!class java.lang.Class
+Files in Java might be tricky, but it is fun enough!sk@3aeaafa6

@@ -83,13 +83,24 @@ public class ISOController {
 		try {
             ISOMsg isoMsg = isoMessageBreaker.parseISOMessage(message);
             output = isoMessageBreaker.printISOMessage(isoMsg);
+            if (!output.contains("null") && !output.isEmpty()) {
             outputmodel.setResponse(output);
             outputmodel.setStatus("Success");
+            return new ResponseEntity<>(outputmodel, HttpStatus.OK);
+            }
+            else {
+				outputmodel.setResponse(output);
+				outputmodel.setStatus(ISOConstants.RECORD_NOT_FOUND);
+				return new ResponseEntity<>(outputmodel, HttpStatus.INTERNAL_SERVER_ERROR);
+			}
         } catch (Exception e) {
             e.printStackTrace();
+            outputmodel.setResponse(output);
+			outputmodel.setStatus(ISOConstants.ERROR);
+			return new ResponseEntity<>(outputmodel, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 		
-		return new ResponseEntity<>(outputmodel, HttpStatus.OK);
+		
 	}
 
 }
